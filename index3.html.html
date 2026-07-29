@@ -1,0 +1,154 @@
+index.html
+1
+100%
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Osamu HASEGAWA">
+    <meta name="keywords" content="html, css, javascript">
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>オンラインじゃんけん大会</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>オンラインじゃんけん大会　登録画面</h1>
+        <nav>
+            
+            　<a href="http://127.0.0.1:3000/kadai%20final/index.html?vscode-livepreview=true" target="_self">ホーム</a>
+            
+            　　<a href="http://127.0.0.1:3000/kadai%20final/%CE%B1.html?vscode-livepreview=true" target="_self">お問い合わせ</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+
+            <h2>記入フォーム</h2>
+            <p>以下の記入欄に記入事項を記入した後、アンケートにお答えください。</p>
+
+            <!-- サーバーにデータを送信する -->
+            <!-- action属性：サーバーサイドの処理が書かれているプログラム指定する -->
+            <!-- method属性：フォームに入力されたデータに由来する別のデータをサーバから取得するのが目的の場合 → get -->
+            <!-- method属性：フォームに入力されたデータをサーバーに送ることが目的の場合 → post -->
+            <form action="index.html" method="post">
+
+                <!-- 1行のテキスト入力フィールド -->
+                <div>
+                    <label for="lastname">姓：</label>
+                    <input type="text" id="lastname" name="surname" placeholder="山田">
+
+                    <label>
+                        名：
+                        <input type="text" id="firstname" name="firstname" placeholder="きよし">
+                    </label>
+                </div>
+
+                
+
+                <!-- チェックボックス -->
+                <!-- value属性でサーバーに送信する値を指定する -->
+                <!-- チェックボックスのvalueのデフォルト値は on " -->
+                
+                <!-- ラジオボタン -->
+                <!-- グループ化したい選択肢に共通のname属性値を指定する  -->
+               　 <div>
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label for="female">女性</label>
+                    
+                    <input type="radio" name="gender" id="male" value="male">
+                    <label for="male">男性</label>
+                    
+                    <input type="radio" name="gender" id="other" value="other">
+                    <label for="other">その他</label>
+                    
+                    <input type="radio" name="gender" id="none" value="none">
+                    <label for="none">回答しない</label>
+                </div>
+
+                
+
+                <!-- メールアドレス -->
+               　 <div>
+                    <label for="email">メールアドレス：</label>
+                    <input type="email" name="email" id="email">
+                </div>
+
+                <!-- 日付関連 -->
+               　 <div>
+                    <label for="birthday">誕生日：</label>
+                    <input type="date" name="birthday" id="birthday">
+
+                    <input type="time" name="time" id="time">
+                </div>
+
+                <!-- 色 -->
+                　<div>
+                    <label for="color">好きな色：</label>
+                    <input type="color" name="color" id="color">
+                </div>
+
+                <!-- 電話番号 -->
+                　<div>
+                    <label for="tel">電話番号：</label>
+                    <input type="tel" name="tel" id="tel">
+                </div>
+
+                <!-- テキストフィールド -->
+               　 <div>
+                    <label for="remarks">その他備考：</label>
+                    <textarea name="remarks" id="remarks" cols="30" rows="10"></textarea>
+                </div>
+
+               　 <div>
+                    <input type="checkbox" name="agreement" id="agreement" value="on" checked>
+                    <label for="agreement">プライバシーポリシーに同意する</label>
+                </div>
+
+                　<a href="http://127.0.0.1:3000/kadai%20final/%CE%B2.html?vscode-livepreview=true" target="_self">プライバシーポリシー</a>
+            
+
+            </form>
+
+        </section>
+
+        
+
+    </main>
+
+    <form action="http://127.0.0.1:3000/kadai%20final/%CE%B3.html?vscode-livepreview=true">
+ <input type="submit" value="送信">
+</form>
+
+
+    <hr>
+
+    <footer>
+        Copyright &copy; Kunichika TAKADA, All Rights Reserved.
+    </footer>
+
+ 
+    <script>
+        document.getElementById("send-data").onclick = function () {
+            // フォームの値を取得
+            const surname = document.getElementById("lastname").value;
+            const firstname = document.getElementById("firstname").value;
+
+            // 取得した値でHTMLを変更
+            document.getElementById("display-surname").innerText = surname
+            document.getElementById("display-firstname").innerText = firstname
+        }
+    </script>
+
+
+
+</body>
+
+</html>
